@@ -2,8 +2,10 @@ package com.vferneda.minhasfinancas.model.entity;
 
 import com.vferneda.minhasfinancas.model.enums.StatusLancamento;
 import com.vferneda.minhasfinancas.model.enums.TipoLancamento;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import javax.persistence.Column;
@@ -22,6 +24,8 @@ import java.time.LocalDate;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "lancamento", schema = "financas")
 public class Lancamento {

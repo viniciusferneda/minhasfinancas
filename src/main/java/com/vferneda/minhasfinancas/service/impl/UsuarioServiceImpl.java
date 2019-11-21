@@ -6,8 +6,8 @@ import com.vferneda.minhasfinancas.model.entity.Usuario;
 import com.vferneda.minhasfinancas.repository.UsuarioRepository;
 import com.vferneda.minhasfinancas.service.UsuarioService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -45,5 +45,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         if (existe) {
             throw new RegraNegocioException("Já existe um usuário cadastrado com este e-mail.");
         }
+    }
+
+    @Override
+    public Optional<Usuario> obterPorId(Long id) {
+        return repository.findById(id);
     }
 }
